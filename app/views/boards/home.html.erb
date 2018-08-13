@@ -1,2 +1,40 @@
-<h1>Boards#home</h1>
-<p>Find me in app/views/boards/home.html.erb</p>
+<div>
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,100,120,0.6) 0%, rgba(0,36,61,0.1) 30%), url('https://res.cloudinary.com/dfowktpgu/image/upload/v1534176779/8812177072_8022fe51f0_k.jpg');">
+    <div class="banner-content">
+      <h1>Boards R' Us</h1>
+      <p>Snow, Skate, Surf - anywhere, anytime</p>
+      <a class="btn btn-info btn-lg">Check it out</a>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class>
+      <h3>List of Available Boards:</h3>
+
+      <br>
+
+      <h4>Snow</h4>
+
+        <% snow = @boards.select { |board| board.category == "Snowboard"} %>
+        <% snow.each do |board|%>
+        <%= board.name %>
+        <% end %>
+
+      <h4>Skate</h4>
+
+        <% skate = @boards.select { |board| board.category == "Skateboard"} %>
+        <% skate.each do |board|%>
+        <%= board.name %>
+        <% end %>
+
+      <h4>Surf</h4>
+
+        <% surf = @boards.select { |board| board.category == "Surfboard"} %>
+        <% surf.each do |board|%>
+        <%= board.name %>
+        <% end %>
+      </div>
+  </div>
+
+</div>
