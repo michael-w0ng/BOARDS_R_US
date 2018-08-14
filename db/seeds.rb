@@ -19,6 +19,10 @@ User.create(
   ]
 )
 
+Conversation.create!(
+  sender_id: 1,
+  receiver_id: 1)
+
 3.times do
   board = Board.create!(
     name: "Snowboard",
