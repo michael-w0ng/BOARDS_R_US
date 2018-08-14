@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all
+    @board = Board.find(params[:board_id])
+    @reviews = Review.all.where(params[:board_id] == @board.id )
   end
 
   def show
@@ -18,7 +19,7 @@ class ReviewsController < ApplicationController
     @board = Board.find(params[:board_id])
     @review.board = @board
     if @review.save!
-      redirect_to boards_path
+      redirect_to board_path(@board)
     else
       render :new
     end
