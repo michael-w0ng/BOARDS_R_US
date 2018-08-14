@@ -8,18 +8,58 @@
     </div>
   </div>
 
+
+
+
+
+<div class="header">
   <div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <div class="profile">
-        <h1><%= @board.name %>
-          <%= @board.description %>
-          <%= @board.category %>
-          <%= @board.price %>
-          <%= @board.location %>
-        </h1>
+    <div class="row">
+      <div class="col-sm-12 col-md-8">
+        <div class="header-board-details">
+            <!--put rails user avatar with username caption-->
+
+          <div class="header-board-name">
+            <h1 id="name"><%= @board.name %></h1>
+            <i class="fas fa-map-pin" id="location"></i>
+              <%= @board.location %></i>
+            <p id="category">
+              <%= @board.category %>
+            </p>
+          </div>
+          <div class="description">
+            <i class="fas fa-columns" id="description">
+              <%= @board.description %></i>
+
+
+            <p>
+
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <form action="#" >
+          <h4><strong>
+                $<%= @board.price %> per day
+              </strong>
+            </h4>
+          <div class="form-group">
+            <div>
+              <input type="text" class="form-control" placeholder="from" id="from">
+            </div>
+            <div>
+              <input type="text" class="form-control" placeholder="to" id="to">
+            </div>
+          </div>
+          <input type="submit" class="btn btn-danger" value="Book My Board" style="width: 100%">
+        </form>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
 
