@@ -5,8 +5,11 @@ class BoardsController < ApplicationController
   end
 
   def index
-    @boards = Board.all
-
+    if params[:query].present?
+      @boards = Board.where(category: params[:query])
+    else
+      @boards = Board.all
+    end
   end
 
   def show

@@ -6,6 +6,20 @@
 
 
     </div>
+    <div class="container Search-form">
+
+
+      <%= form_tag boards_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          label: "Category",
+          placeholder: "Find a board category" %>
+        <% end %>
+        <br>
+        <%= submit_tag "Search Board" %>
+    </div>
+
   </div>
 
   <div class="container">
