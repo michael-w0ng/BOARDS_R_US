@@ -25,10 +25,24 @@ Conversation.create!(
 
 3.times do
   board = Board.create!(
-    name: "Snowboard",
+    name: "Snowmaster 3000",
     category: "Snowboard",
-    location: "Alps",
-    description: "great snowboard",
+    location: "Geneva, Switzerland",
+    description: "The best board.
+                  Period.
+                  Ain't nothing better than this.
+                  For realz.
+                  Seriously.
+                  The best board.
+                  Period.
+                  Ain't nothing better than this.
+                  For realz.
+                  Seriously.
+                  The best board.
+                  Period.
+                  Ain't nothing better than this.
+                  For realz.
+                  Seriously.",
     price: 300.00,
     user: User.all.sample
   )
@@ -36,7 +50,7 @@ end
 
 3.times do
   board = Board.create!(
-    name: "Skateboard",
+    name: "Skatemaster 2000",
     category: "Skateboard",
     location: "NYC",
     description: "great skateboard",
@@ -47,7 +61,7 @@ end
 
 3.times do
   board = Board.create!(
-    name: "Surfboard",
+    name: "Surfmaster 5000",
     category: "Surfboard",
     location: "Sydney",
     description: "great surfboard",
