@@ -1,1 +1,15 @@
-<h1>NEW</h1>
+<div class="col-lg-4 col-lg-offset-4">
+  <h3>Hey, you have board to rent out?</h3>
+    <h4>Tell us more about it!</h4>
+      <%= simple_form_for @board do |f| %>
+      <%= f.select :category, ["Skateboard", "Snowboard", "Surfboard"] %>
+      <%= f.input :name %>
+      <%= f.input :location %>
+      <%= f.input :price %>
+      <%= f.input :description %>
+      <%= f.submit class: "btn btn-primary"%>
+      </div>
+    <% end %>
+
+
+
