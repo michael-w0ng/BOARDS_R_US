@@ -1,3 +1,4 @@
+<!--
 <div>
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,100,120,0.6) 0%, rgba(0,36,61,0.1) 30%), url('https://res.cloudinary.com/dfowktpgu/image/upload/v1534176779/8812177072_8022fe51f0_k.jpg');">
     <div class="container banner-content">
@@ -17,27 +18,28 @@
     <div class="row">
       <div class="col-sm-12 col-md-8">
         <div class="header-board-details">
-            <!--put rails user avatar with username caption-->
 
           <div class="header-board-name">
-            <h1 id="name"><%= @board.name %></h1>
+            <h1 id="name">
+             <strong>
+              <%= @board.name %>
+            </strong>
+            </h1>
             <i class="fas fa-map-pin" id="location"></i>
-              <%= @board.location %></i>
-            <p id="category">
+              <%= @board.location %></i> <br>
+            <i class="fa fa-angle-right" id="category">
               <%= @board.category %>
-            </p>
+            </i>
+            <br>
           </div>
           <div class="description">
-            <i class="fas fa-columns" id="description">
-              <%= @board.description %></i>
-
-
             <p>
-
+              <%= @board.description %>
             </p>
           </div>
         </div>
       </div>
+      <div class="booking-container">
       <div class="col-xs-12 col-sm-4">
         <form action="#" >
           <h4><strong>
@@ -55,11 +57,53 @@
           <input type="submit" class="btn btn-danger" value="Book My Board" style="width: 100%">
         </form>
       </div>
+      </div>
     </div>
   </div>
 </div>
 
+-->
 
 
 
+<div class="container">
+  <div class="row">
+    <%# Info column %>
+    <div class="col-xs-12 col-md-6">
+       <div class="wrapper" id="booking-recap-wrapper">
+          <div class="booking-recap-container">
+            <div class="box-board-show-details">
+              <div class="box-info text-center">
+                <p>Belongs to:
+                  <%= link_to "#{@board.name} #{@board.name}", user_path(@board.name)%>
+                </p>
+                <h4>Description: </h4>
+                <p>
+                  <%= @board.description %>
+                </p>
+                <div>
+                  <% if (user_signed_in? && (current_user.id == @board.user_id)) %>
+                  <div class="btn-box-board-show">
+                   <p><%= link_to "Edit this board", edit_board_path(@board), class: "btn btn-sm btn-warning"%></p>
+                   <p> <%= link_to "Remove this board", hide_board_path(@board), class: "btn btn-sm btn-danger"%> </p>
+                 </div>
+              <% end %>
+              </div>
+            </div>
+          </div>
+      </div>
+   </div>
+
+     <%# TODO: refactor to helper %>
+   </div>
+   <div class="col-xs-12 col-md-6">
+    <% if (user_signed_in? && (current_user.id != @board.user_id)) %>
+    <%= render 'boards/booking_form_embed' %>
+    <% elsif (user_signed_in? == false)%>
+    <%= link_to "Log in to book this watch!", new_user_session_path, class: "btn btn-primary"%>
+    <% end %>
+    <%= render 'boards/map', board: @board, map_circle: @map_circle %>
+  </div>
+</div>
+</div>
 
