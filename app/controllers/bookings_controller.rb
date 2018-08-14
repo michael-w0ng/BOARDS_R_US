@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     # @booking = Booking.new(booking_params)
     if @booking.save!
-      redirect_to booking_path
+      redirect_to root_path
     else
       render :new
     end
