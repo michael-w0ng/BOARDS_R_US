@@ -1,1 +1,44 @@
-<h1>INDEX</h1>
+<div class="container">
+  <h1>INDEX</h1>
+
+  <h2>Boards matching your search request:</h2>
+
+  <div class = "Box">
+  <div class="row">
+    <%@boards.each do |board|%>
+      <div class="col-xs-3">
+        <div class="card-outline">
+          <div class="card-content card-image">
+            <%= cl_image_tag(board.photo, height: 165, width: 270, crop: :fill) %>
+          </div>
+          <div class = "card-content card-body">
+            <p><%=link_to board.name, board_path(board)%></p>
+            <p>$<%=board.price%>0 | <%=board.location%></p>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+  <div id="map"></div>
+  </div>
+</div>
+
+<!-- <script>
+  function initMap() {
+    // Create a map object and specify the DOM element for display.
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 52.5206, lng: 13.4098},
+      scrollwheel: false,
+      zoom: 8
+    });
+  }
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <script async defer
+         src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap"> -->
+<!--  </script> -->

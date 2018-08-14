@@ -5,8 +5,11 @@ class BoardsController < ApplicationController
   end
 
   def index
-    @boards = Board.all
-
+    if params[:query].present?
+      @boards = Board.where(category: params[:query])
+    else
+      @boards = Board.all
+    end
   end
 
   def show
@@ -42,7 +45,7 @@ class BoardsController < ApplicationController
   private
 
   def boards_params
-    params.require(:board).permit(:name, :description, :category, :price, :location, :user_id)
+    params.require(:board).permit(:name, :description, :category, :price, :location, :user_id, :photo)
   end
 
 end
