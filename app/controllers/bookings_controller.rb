@@ -14,9 +14,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking.user = current_user
-    @booking.board = Board.find(params[:board_id])
     @booking = Booking.new(booking_params)
+    @booking.board = Board.find(params[:board_id])
+    @booking.user = current_user
     # @booking = Booking.new(booking_params)
     if @booking.save!
       redirect_to root_path
@@ -34,6 +34,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:board_id, :user_id)
+    params.require(:booking).permit(:board_id, :user_id, :start_date, :end_date)
   end
 end
