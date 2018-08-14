@@ -1,1 +1,56 @@
 // Specific CSS for your home-page
+.banner {
+  background-size: cover;
+}
+
+.banner-content {
+  height: 100vh,
+}
+
+.row {
+  margin-top: 30px;
+  margin-left: 200px;
+  margin-right: 100px;
+  margin-bottom: 30px;
+}
+
+
+.card-outline {
+  width: 270px;
+  height: 250px;
+  box-shadow: 2px 3px 6px -1px rgba(0, 0, 0, 0.49);
+  margin: 15px;
+  border-radius: 3px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.card-content {
+    border: 1px solid black;
+}
+
+.card-image {
+    width: 100%;
+    height: 66%;
+    background-size: cover;
+    border-radius: 3px 3px 0px 0px;
+    background-image: url "https://res.cloudinary.com/dfowktpgu/image/upload/v1534177803/901058743_1757615448_o.jpg";
+}
+
+.card-body {
+    width: 100%;
+    height: 34%;
+    justify-content: space-between;
+  }
+
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  .card {
+    display: inline-block;
+  }
+}
