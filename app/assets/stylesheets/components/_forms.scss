@@ -1,0 +1,20 @@
+.form{
+position:relative;
+
+
+}
+
+.center-form{
+  position:absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%)
+}
+
+.form-links{
+  margin-top: 20px;
+}
+
+.form-inputs{
+  width: 500px;
+}
