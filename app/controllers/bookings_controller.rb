@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
+    @user = current_user
+    @bookings = Booking.all.where(params[:user_id] == @user.id )
   end
 
   def show
