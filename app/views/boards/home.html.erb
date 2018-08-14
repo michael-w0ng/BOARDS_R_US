@@ -1,40 +1,82 @@
 <div>
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,100,120,0.6) 0%, rgba(0,36,61,0.1) 30%), url('https://res.cloudinary.com/dfowktpgu/image/upload/v1534176779/8812177072_8022fe51f0_k.jpg');">
-    <div class="banner-content">
+    <div class="container banner-content">
       <h1>Boards R' Us</h1>
-      <p>Snow, Skate, Surf - anywhere, anytime</p>
-      <a class="btn btn-info btn-lg">Check it out</a>
+      <h2>Snow, Skate, Surf - anywhere, anytime</h2>
+
 
     </div>
   </div>
 
   <div class="container">
-    <div class>
-      <h3>List of Available Boards:</h3>
+    <h3>Available Boards:</h3>
 
-      <br>
+    <h4>Snow</h4>
+    <div class="scrolling-wrapper">
 
-      <h4>Snow</h4>
+      <% snow = @boards.select { |board| board.category == "Snowboard"} %>
+      <% snow.each do |board|%>
+      <div class="card">
 
-        <% snow = @boards.select { |board| board.category == "Snowboard"} %>
-        <% snow.each do |board|%>
-        <%= board.name %>
-        <% end %>
+        <div class="card-outline">
+          <div class="card-content card-image">
 
-      <h4>Skate</h4>
-
-        <% skate = @boards.select { |board| board.category == "Skateboard"} %>
-        <% skate.each do |board|%>
-        <%= board.name %>
-        <% end %>
-
-      <h4>Surf</h4>
-
-        <% surf = @boards.select { |board| board.category == "Surfboard"} %>
-        <% surf.each do |board|%>
-        <%= board.name %>
-        <% end %>
+          </div>
+          <div class="card-content card-body">
+            <%= board.name %>
+          </div>
+        </div>
       </div>
-  </div>
+      <% end %>
+    </div>
 
+    <h4>Skate</h4>
+    <div class="scrolling-wrapper">
+      <% skate = @boards.select { |board| board.category == "Skateboard"} %>
+      <% skate.each do |board|%>
+
+      <div class="card">
+
+        <div class="card-outline">
+          <div class="card-content card-image">
+
+          </div>
+          <div class="card-content card-body">
+            <%= board.name %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+     </div>
+
+    <h4>Surf</h4>
+    <div class="scrolling-wrapper">
+      <% surf = @boards.select { |board| board.category == "Surfboard"} %>
+      <% surf.each do |board|%>
+
+      <div class="card">
+
+        <div class="card-outline">
+          <div class="card-content card-image">
+
+          </div>
+          <div class="card-content card-body">
+            <%= board.name %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+
+<!--       <div class="cards">
+        <h4>Surf</h4>
+
+          <#% surf = @boards.select { |board| board.category == "Surfboard"} %>
+          <#% surf.each do |board|%>
+              <%#= board.name %>
+          <#% end %>
+      </div> -->
+
