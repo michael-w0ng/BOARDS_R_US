@@ -1,2 +1,12 @@
-<h4> Your bookings </h4>
+<div class="container">
+  <h4> Here are your upcoming bookings </h4>
+  <h5> Get excited </h5>
+    <% @bookings.each do |booking| %>
+    <p> You are going extremeeeee from <%= booking.start_date %> until the <%= booking.end_date %> <%= booking.board.name %></p>
+    <p> Your board of choice : <%=  booking.board.name %></p>
+    <p> <%= booking.board.description %></p>
+    <% end %>
+    <p> <%= link_to "Back to boards", root_path, class: "btn btn-primary" %></p>
+</div>
+
 
