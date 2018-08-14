@@ -1,3 +1,18 @@
+.flexflex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.location {
+    font-size: 16px;
+
+}
+
+.category {
+    font-size: 16px;
+
+}
+
 .description {
   border: 1px solid #EBEBEB;
   border-radius: 4px;
@@ -11,6 +26,7 @@
   padding-right: 24px;
   margin: 0px;
   border: 1px solid #e4e4e4;
+
 }
 
 

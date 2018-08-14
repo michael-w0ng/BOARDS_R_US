@@ -18,18 +18,25 @@
     <div class="row">
       <div class="col-sm-12 col-md-8">
         <div class="header-board-details">
-
+        <div class="text-left">
           <div class="header-board-name">
             <h1 id="name">
              <strong>
               <%= @board.name %>
             </strong>
             </h1>
-            <i class="fas fa-map-pin" id="location"></i>
-              <%= @board.location %></i> <br>
-            <i class="fa fa-angle-right" id="category">
-              <%= @board.category %>
-            </i>
+            </div>
+            <div class="flexflex">
+            <div class="location">
+                <i class="fas fa-map-pin" id="location">
+                <%= @board.location %></i>
+              </div>
+              <div class="category">
+                <i class="fa fa-angle-right" id="category">
+                  <%= @board.category %>
+                </i>
+            </div>
+            </div>
             <br>
           </div>
           <div class="description">
@@ -39,6 +46,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-xs-12 col-sm-4">
       <div class="booking-container">
         <form action="#" >
