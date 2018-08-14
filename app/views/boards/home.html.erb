@@ -4,10 +4,8 @@
       <h1>Boards R' Us</h1>
       <h2>Snow, Skate, Surf - anywhere, anytime</h2>
 
-
-    </div>
-    <div class="container Search-form">
-
+    <div class="container search-form">
+      <div class="col-sm-6">
 
       <%= form_tag boards_path, method: :get do %>
         <%= text_field_tag :query,
@@ -15,9 +13,11 @@
           class: "form-control",
           label: "Category",
           placeholder: "Find a board category" %>
-        <% end %>
         <br>
         <%= submit_tag "Search Board" %>
+        <% end %>
+      </div>
+    </div>
     </div>
 
   </div>
@@ -37,9 +37,8 @@
              <%= cl_image_tag(board.photo, height: 165, width: 270, crop: :fill) %>
           </div>
           <div class="card-content card-body">
-            <p class="card-text"><strong><%= board.name %></strong></p>
-            <p class="card-text"><%= board.location %></p>
-            <p class="card-text">$<%= board.price %>0</p>
+            <p class="card-text"><%=link_to board.name, board_path(board)%></p>
+            <p class="card-text">$<%= board.price %>0 | <%=board.location%></p>
           </div>
         </div>
       </div>
@@ -58,9 +57,8 @@
             <%= cl_image_tag(board.photo, height: 165, width: 270, crop: :fill) %>
           </div>
           <div class="card-content card-body">
-            <p class="card-text"><strong><%= board.name %></strong></p>
-            <p class="card-text"><%= board.location %></p>
-            <p class="card-text">$<%= board.price %>0</p>
+            <p class="card-text"><%=link_to board.name, board_path(board)%></p>
+            <p class="card-text">$<%= board.price %>0 | <%=board.location%></p>
           </div>
         </div>
       </div>
@@ -79,9 +77,8 @@
             <%= cl_image_tag(board.photo, height: 165, width: 270, crop: :fill) %>
           </div>
           <div class="card-content card-body">
-            <p class="card-text"><strong><%= board.name %></strong></p>
-            <p class="card-text"><%= board.location %></p>
-            <p class="card-text">$<%= board.price %>0</p>
+            <p class="card-text"><%=link_to board.name, board_path(board)%></p>
+            <p class="card-text">$<%= board.price %>0 | <%=board.location%></p>
           </div>
         </div>
       </div>
@@ -89,6 +86,8 @@
     </div>
   </div>
 </div>
+
+
 
 
 <!--       <div class="cards">

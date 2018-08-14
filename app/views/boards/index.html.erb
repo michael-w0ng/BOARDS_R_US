@@ -8,11 +8,11 @@
     <div class="col-xs-4">
       <div class="card-outline">
         <div class="card-content card-image">
-
+          <%= cl_image_tag(board.photo, height: 165, width: 270, crop: :fill) %>
         </div>
         <div class = "card-content card-body">
           <p><%=link_to board.name, board_path(board)%></p>
-          <p><%=board.price%> | <%=board.location%></p>
+          <p>$<%=board.price%>0 | <%=board.location%></p>
         </div>
       </div>
     </div>
