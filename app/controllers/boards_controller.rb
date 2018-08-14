@@ -19,7 +19,8 @@ class BoardsController < ApplicationController
 
   def create
     @board = Board.new(boards_params)
-    if @board.save!
+    @board.user = current_user
+    if @board.save
       redirect_to root_path
     else
       render :new
