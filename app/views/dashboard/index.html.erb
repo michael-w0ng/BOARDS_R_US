@@ -1,0 +1,38 @@
+<div class="container">
+
+  <div class="dashboard-box">
+    <div class="dashboard-right">
+      <h1>This is your dashboard</h1>
+
+      <div>
+        <img src='https://kitt.lewagon.com/placeholder/users/alex-felix' class="avatar-large"/>
+      </div>
+      <div class="user-info">
+        <h3> <%=@user.email%></h3>
+        <h4>Description:</h4>
+        <p> EXAMPLE USER.DESCRIPTION</p>
+        <div class= "btn btn-primary"> Edit</div>
+      </div>
+    </div>
+
+    <div class="dashboard-left">
+      <div class = "dashboard-stats">
+        <div class="stats-rented">
+          <p>Rented: 10</p>
+        </div>
+
+        <div class="stats-lended">
+          <p>Placed: 2</p>
+        </div>
+      </div>
+      <div class = "dashboard-bookings">
+      <h4>Your bookings:</h4>
+      <% @bookings.each do |booking| %>
+      <p> Your booking from <%= booking.start_date %> until the <%= booking.end_date %> <%= booking.board.name %></p>
+      <p> Your board of choice : <%=  booking.board.name %></p>
+      <p> <%= booking.board.description %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
