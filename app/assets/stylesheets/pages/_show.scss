@@ -1,32 +1,35 @@
-.flexflex {
+.wrapper-height {
+  margin: 25px;
+  height: 40vh;
   display: flex;
+}
+
+.flex-col {
+  height: 100%;
+  width: 50%;
+}
+
+.heading-show {
+  height: 50%;
+}
+
+.description-show {
+  height: 50%;
+}
+
+.wrapper-heading-show{
+  display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
 }
 
-.location {
-    font-size: 16px;
 
+.wrapper-price-show{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-evenly;
 }
-
-.category {
-    font-size: 16px;
-
+.form-show {
+  margin: 0 auto;
 }
-
-.description {
-  border: 1px solid #EBEBEB;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.05);
-  padding: 24px;
-  font-size: 16px !important;
-}
-
-.booking-container {
-  padding-left: 24px;
-  padding-right: 24px;
-  margin: 0px;
-  border: 1px solid #e4e4e4;
-
-}
-
-
