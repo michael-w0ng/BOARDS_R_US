@@ -1,0 +1,23 @@
+.inbox{
+  background: white;
+  padding: 15px;
+  margin: 15px;
+  li{list-style: none;}
+}
+
+.message{
+  background: white;
+  padding: 15px;
+  margin: 15px;
+  li{list-style: none;};
+  .message-body{
+    background: #DADADA;
+    padding: 15px;
+    width: 700px;
+    border-radius: 10px;
+    }
+  }
+
+.message-form{
+  margin: 15px;
+}
