@@ -6,7 +6,7 @@
   <div class = "Box">
   <div class="row">
     <%@boards.each do |board|%>
-      <div class="col-xs-3">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card-outline">
           <div class="card-content card-image">
             <%= cl_image_tag(board.photo, height: 165, width: 270, crop: :fill) %>

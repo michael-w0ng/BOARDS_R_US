@@ -23,6 +23,18 @@
   justify-content: space-evenly;
 }
 
+.show-banner {
+  height: 60vh;
+  background-size: contain;
+  // background-repeat: no-repeat;
+  background-position: center;
+}
+
+.show-h2 {
+  color: #13315C;
+  text-shadow: -0.5px 0 lightgray, 0 0.5px lightgray, 0.5px 0 lightgray, 0 -0.5px lightgray;
+}
+
 
 .wrapper-price-show{
   display: flex;

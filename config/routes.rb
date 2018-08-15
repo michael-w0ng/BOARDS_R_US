@@ -7,10 +7,13 @@ Rails.application.routes.draw do
 
   resources :boards do
     resources :bookings, only: [:show, :new, :create, :destroy]
+    resources :reviews, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 
   resources :bookings, only: [:index]
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]
   end
+
+  get 'dashboard', to: 'dashboard#index'
 end
