@@ -1,8 +1,9 @@
 <div>
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,100,120,0.6) 0%, rgba(0,36,61,0.1) 30%), url('https://res.cloudinary.com/dfowktpgu/image/upload/v1534176779/8812177072_8022fe51f0_k.jpg');">
     <div class="container banner-content">
+    <div class="titles">
       <h1>Boards R' Us</h1>
-      <h2>Snow, Skate, Surf - anywhere, anytime</h2>
+    </div>
 
     <div class="container search-form">
       <div class="col-sm-6">
@@ -34,7 +35,7 @@
 
         <div class="card-outline">
           <div class="card-content card-image">
-             <%= cl_image_tag(board.photo, height: 165, width: 270, crop: :fill) %>
+             <%= cl_image_tag(board.photo, class: 'card-img') %>
           </div>
           <div class="card-content card-body">
             <p class="card-text"><%=link_to board.name, board_path(board)%></p>
@@ -54,7 +55,7 @@
 
         <div class="card-outline">
           <div class="card-content card-image">
-            <%= cl_image_tag(board.photo, height: 165, width: 270, crop: :fill) %>
+            <%= cl_image_tag(board.photo, class: 'card-img') %>
           </div>
           <div class="card-content card-body">
             <p class="card-text"><%=link_to board.name, board_path(board)%></p>
@@ -74,7 +75,7 @@
 
         <div class="card-outline">
           <div class="card-content card-image">
-            <%= cl_image_tag(board.photo, height: 165, width: 270, crop: :fill) %>
+            <%= cl_image_tag(board.photo, class: 'card-img') %>
           </div>
           <div class="card-content card-body">
             <p class="card-text"><%=link_to board.name, board_path(board)%></p>

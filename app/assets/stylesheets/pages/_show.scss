@@ -13,4 +13,16 @@
   border: 1px solid #e4e4e4;
 }
 
+.show-banner {
+  height: 60vh;
+  background-size: contain;
+  // background-repeat: no-repeat;
+  background-position: center;
+}
+
+.show-h2 {
+  color: #13315C;
+  text-shadow: -0.5px 0 lightgray, 0 0.5px lightgray, 0.5px 0 lightgray, 0 -0.5px lightgray;
+}
+
 

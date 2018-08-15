@@ -1,8 +1,8 @@
 <div>
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,100,120,0.6) 0%, rgba(0,36,61,0.1) 30%), url('https://res.cloudinary.com/dfowktpgu/image/upload/v1534176779/8812177072_8022fe51f0_k.jpg');">
+  <div class="show-banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 0%), url(<%= @board.photo %>);">
     <div class="container banner-content">
-      <h1>Boards R' Us</h1>
-      <h2>Snow, Skate, Surf - anywhere, anytime</h2>
+
+      <h2 class="show-h2"><%= @board.name %></h2>
 
 
     </div>
