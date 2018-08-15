@@ -13,57 +13,72 @@
 
 
 
-<div class="header">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-md-8">
-        <div class="header-board-details">
+  <div class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <div class="header-board-details">
 
-          <div class="header-board-name">
-            <h1 id="name">
-             <strong>
-              <%= @board.name %>
-            </strong>
-            </h1>
-            <i class="fas fa-map-pin" id="location"></i>
+            <div class="header-board-name">
+              <h1 id="name">
+                <strong>
+                  <%= @board.name %>
+                </strong>
+              </h1>
+              <i class="fas fa-map-pin" id="location"></i>
               <%= @board.location %></i> <br>
-            <i class="fa fa-angle-right" id="category">
-              <%= @board.category %>
-            </i>
-            <br>
-          </div>
-          <div class="description">
-            <p>
-              <%= @board.description %>
-            </p>
+              <i class="fa fa-angle-right" id="category">
+                <%= @board.category %>
+              </i>
+              <br>
+            </div>
+            <div class="description">
+              <p>
+                <%= @board.description %>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-      <div class="booking-container">
-        <form action="#" >
-          <h4><strong>
+        <div class="col-xs-12 col-sm-4">
+          <div class="booking-container">
+            <form action="#" >
+              <h4><strong>
                 $<%= @board.price %> per day
               </strong>
             </h4>
-          <div class="form-group">
-            <div>
-              <input type="text" class="form-control" placeholder="from" id="from">
+            <div class="form-group">
+              <div>
+                <input type="text" class="form-control" placeholder="from" id="from">
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="to" id="to">
+              </div>
             </div>
-            <div>
-              <input type="text" class="form-control" placeholder="to" id="to">
-            </div>
-          </div>
-          <%= link_to "Book this board", new_board_booking_path(@board), class: "btn btn-danger"  %>
-          <%= link_to "Add a Review", new_board_review_path(@board), class: "btn btn-warning" %>
-        </form>
-      </div>
+            <%= link_to "Book this board", new_board_booking_path(@board), class: "btn btn-danger"  %>
+            <%= link_to "Add a Review", new_board_review_path(@board), class: "btn btn-warning" %>
+          </form>
+        </div>
       </div>
     </div>
+
+
+
+
+  <div>
+    <h3>Reviews:</h3>
+    <%@board.reviews.each do |review| %>
+    <div class="review-box">
+      <p> <%= review.content %> </p>
+      <% review.rating.times do %>
+      <i class="fas fa-star"></i>
+      <% end %></p>
+    </div>
+    <% end %>
+
   </div>
 </div>
 
-
+</div>
 
 
 
