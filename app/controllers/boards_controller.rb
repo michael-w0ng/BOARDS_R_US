@@ -5,21 +5,7 @@ class BoardsController < ApplicationController
   end
 
   def index
-    @boards = Board.where.not(latitude: nil, longitude: nil)
-
-    @markers = @boards.map do |board|
-      {
-        lat: board.latitude,
-        lng: board.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-      }
-    end
-
-    if params[:query].present?
-      @boards = Board.where(category: params[:query])
-    else
-      @boards = Board.all
-    end
+    @boards = apply_filters(Board.all)
   end
 
   def show
@@ -60,6 +46,19 @@ class BoardsController < ApplicationController
   end
 
   private
+
+  def apply_filters(scope)
+    starts = params[:time_start]
+    ends = params[:time_end]
+
+    if params[:query].present? && starts.present? && ends.present?
+      scope = scope.joins(:bookings).where("(bookings.start_date, bookings.end_date) OVERLAPS (?, ?)", starts, ends)
+      scope = Board.where.not(id: scope.pluck(:id))
+    end
+
+    scope = scope.where(category: params[:query]) if params[:query].present?
+    scope
+  end
 
   def boards_params
     params.require(:board).permit(:name, :description, :category, :price, :location, :user_id, :photo)
