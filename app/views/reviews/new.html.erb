@@ -1,0 +1,9 @@
+  <div class="container">
+    <h4> How did you like this bad boy ? </h4>
+    <%= simple_form_for [@board, @review] do |f| %>
+      <%= f.input :content %>
+      <%= f.label "Rating" %>
+      <%= f.select :rating, [1,2,3,4,5] %> <br>
+      <%= f.submit "Submit Rating", class: "btn btn-success" %>
+    <% end  %>
+  </div>

@@ -54,13 +54,18 @@
               <input type="text" class="form-control" placeholder="to" id="to">
             </div>
           </div>
-          <input type="submit" class="btn btn-danger" value="Book My Board" style="width: 100%">
+          <%= link_to "Book this board", new_board_booking_path(@board), class: "btn btn-danger"  %>
+          <%= link_to "Add a Review", new_board_review_path(@board), class: "btn btn-warning" %>
         </form>
       </div>
       </div>
     </div>
   </div>
 </div>
+<div>
+  <%= @board.reviews %>
+</div>
+
 
 
 
