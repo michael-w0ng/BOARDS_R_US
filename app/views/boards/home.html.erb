@@ -15,14 +15,16 @@
           label: "Category",
           placeholder: "Find a board category" %>
           <br>
+          <p>From:</p>
            <%= date_field_tag :time_start,
-          params[:time_start],
+          params[:time_start], :value => Time.now.strftime('%Y-%m-%d'),
           class: "form-control",
           label: "Start Date",
           placeholder: "From" %>
           <br>
+          <p>Until:</p>
             <%= date_field_tag :time_end,
-          params[:time_end],
+          params[:time_end], :value => Time.now.strftime('%Y-%m-%d'),
           class: "form-control",
           label: "End Date",
           placeholder: "To" %>

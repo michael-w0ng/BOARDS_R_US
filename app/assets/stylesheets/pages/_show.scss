@@ -35,12 +35,16 @@
   text-shadow: -0.5px 0 lightgray, 0 0.5px lightgray, 0.5px 0 lightgray, 0 -0.5px lightgray;
 }
 
+.h3-no-margin {
+  margin-top: 0px;
+}
+
 
 .wrapper-price-show{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: space-evenly;
+  // justify-content: space-around;
+  // align-items: space-evenly;
 }
 .form-show {
   margin: 0 auto;
