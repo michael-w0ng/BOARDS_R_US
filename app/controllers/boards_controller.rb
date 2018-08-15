@@ -5,19 +5,7 @@ class BoardsController < ApplicationController
   end
 
   def index
-    if params[:query].present?
-      @boards = Board.where(category: params[:query])
-    elsif params[:query].present? && params[:time_start].present? && params[:time_end].present?
-      @boards = Board.where(category: params[:query])
-      @boards.each do |board|
-        if board.bookings.include?(:time_start => :start_date..:end_date) || board.bookings.include?(:time_end => :start_date..:end_date)
-          @boards.pop(board)
-        end
-       end
-       return @boards
-    else
-      @boards = Board.all
-    end
+    @boards = apply_filters(Board.all)
   end
 
   def show
@@ -51,6 +39,19 @@ class BoardsController < ApplicationController
   end
 
   private
+
+  def apply_filters(scope)
+    starts = params[:time_start]
+    ends = params[:time_end]
+
+    if params[:query].present? && starts.present? && ends.present?
+      scope = scope.joins(:bookings).where("(bookings.start_date, bookings.end_date) OVERLAPS (?, ?)", starts, ends)
+      scope = Board.where.not(id: scope.pluck(:id))
+    end
+
+    scope = scope.where(category: params[:query]) if params[:query].present?
+    scope
+  end
 
   def boards_params
     params.require(:board).permit(:name, :description, :category, :price, :location, :user_id, :photo)
