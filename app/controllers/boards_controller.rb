@@ -24,6 +24,13 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+
+    @markers =
+      [{
+        lat: @board.latitude,
+        lng: @board.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }]
   end
 
   def new
