@@ -9,57 +9,61 @@
   </div>
 
 
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+  ></div>
 
 
+  <div class="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <div class="header-board-details">
 
-
-<div class="header">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-md-8">
-        <div class="header-board-details">
-
-          <div class="header-board-name">
-            <h1 id="name">
-             <strong>
-              <%= @board.name %>
-            </strong>
-            </h1>
-            <i class="fas fa-map-pin" id="location"></i>
-              <%= @board.location %></i> <br>
-            <i class="fa fa-angle-right" id="category">
-              <%= @board.category %>
-            </i>
-            <br>
-          </div>
-          <div class="description">
-            <p>
-              <%= @board.description %>
-            </p>
+            <div class="header-board-name">
+              <h1 id="name">
+               <strong>
+                <%= @board.name %>
+              </strong>
+              </h1>
+              <i class="fas fa-map-pin" id="location"></i>
+                <%= @board.location %></i> <br>
+              <i class="fa fa-angle-right" id="category">
+                <%= @board.category %>
+              </i>
+              <br>
+            </div>
+            <div class="description">
+              <p>
+                <%= @board.description %>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-      <div class="booking-container">
-        <form action="#" >
-          <h4><strong>
-                $<%= @board.price %> per day
-              </strong>
-            </h4>
-          <div class="form-group">
-            <div>
-              <input type="text" class="form-control" placeholder="from" id="from">
+        <div class="col-xs-12 col-sm-4">
+        <div class="booking-container">
+          <form action="#" >
+            <h4><strong>
+                  $<%= @board.price %> per day
+                </strong>
+              </h4>
+            <div class="form-group">
+              <div>
+                <input type="text" class="form-control" placeholder="from" id="from">
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="to" id="to">
+              </div>
             </div>
-            <div>
-              <input type="text" class="form-control" placeholder="to" id="to">
-            </div>
-          </div>
-          <input type="submit" class="btn btn-danger" value="Book My Board" style="width: 100%">
-        </form>
-      </div>
+            <input type="submit" class="btn btn-danger" value="Book My Board" style="width: 100%">
+          </form>
+        </div>
+        </div>
       </div>
     </div>
-  </div>
 </div>
 
 

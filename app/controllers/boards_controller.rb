@@ -5,6 +5,16 @@ class BoardsController < ApplicationController
   end
 
   def index
+    @boards = Board.where.not(latitude: nil, longitude: nil)
+
+    @markers = @boards.map do |board|
+      {
+        lat: board.latitude,
+        lng: board.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
+
     if params[:query].present?
       @boards = Board.where(category: params[:query])
     else
