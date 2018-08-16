@@ -3,6 +3,7 @@ Board.destroy_all
 Conversation.destroy_all
 Message.destroy_all
 User.destroy_all
+Review.destroy_all
 
 
 
@@ -24,10 +25,8 @@ User.create(
 )
 
 
+puts "user Created!"
 
-Conversation.create!(
-  sender_id: 1,
-  receiver_id: 1)
 
 # Snowboards
   board_1 = Board.create!(
@@ -102,3 +101,8 @@ end
   )
 end
 
+Conversation.create!(
+  sender_id: 1,
+  receiver_id: 1)
+
+puts "Conversation Created!"

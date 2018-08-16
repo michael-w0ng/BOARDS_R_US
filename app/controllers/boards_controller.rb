@@ -20,6 +20,7 @@ class BoardsController < ApplicationController
         lng: @board.longitude#,
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }]
+
    if current_user.present?
      if Conversation.between(current_user.id, @board.user).present?
         @conversation = Conversation.between(current_user.id, @board.user).first
@@ -28,6 +29,7 @@ class BoardsController < ApplicationController
         @conversation.save!
       end
    end
+
 
   end
 
