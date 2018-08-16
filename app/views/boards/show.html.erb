@@ -63,16 +63,19 @@
     </div>
 
     <h4>Booking Dates</h4>
-      <div>
-        <%= simple_form_for [@board, @booking] do |f|  %>
-        <%= f.label "From:" %>
-        <%= f.date_field :start_date, :value => session[:time_start] %>
-        <br>
-        <%= f.label "Until:" %>
-        <%= f.date_field :end_date, :value => session[:time_end] %> <br>
-        <%= f.submit "Book", class: "btn btn-warning" %>
-      </div>
+
+      <%= simple_form_for [@board, @booking] do |f|  %>
+      <%= f.label "From:" %>
+      <%= f.date_field :start_date, :value => session[:time_start] %>
+      <br>
+      <%= f.label "Until:" %>
+      <%= f.date_field :end_date, :value => session[:time_end] %> <br>
+      <%= f.submit "Book" %>
+    <!-- <%# conversations.receiver_id = @board.user%> -->
+      <%= link_to "Message the owner", conversation_messages_path(@conversation), class: "btn btn-primary"%>
     <% end %>
+
+
   <div>
     <h3 class="h3-no-margin">Reviews:</h3>
     <%@board.reviews.each do |review| %>

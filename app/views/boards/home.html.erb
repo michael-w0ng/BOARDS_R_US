@@ -9,11 +9,10 @@
       <div class="col-sm-6">
 
       <%= form_tag boards_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          label: "Category",
-          placeholder: "Find a board category" %>
+          <p>Pick a board category:</p>
+        <%= select_tag :category, options_for_select(["Snowboard", "Skateboard", "Surfboard"]),
+            class: "form-control" %>
+
           <br>
 
         <%= text_field_tag :place,

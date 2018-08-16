@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-
+  before_action :set_conversations
   def home
     @boards = Board.all
   end
@@ -20,6 +20,14 @@ class BoardsController < ApplicationController
         lng: @board.longitude#,
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }]
+
+   if Conversation.between(current_user.id, @board.user.id).present?
+      @conversation = Conversation.between(current_user, @board.user).first
+    else
+      @conversation = Conversation.new(sender_id: current_user.id, receiver_id: @board.user.id)
+      @conversation.save!
+    end
+
   end
 
   def new
@@ -29,6 +37,7 @@ class BoardsController < ApplicationController
   def create
     @board = Board.new(boards_params)
     @board.user = current_user
+    # @board.owner_id = current_user
     if @board.save
       redirect_to board_path(@board), notice: "You have successfully listed your board!!"
     else
@@ -59,14 +68,20 @@ class BoardsController < ApplicationController
       scope = Board.where.not(id: scope.pluck(:id))
     end
 
-    scope = scope.where(category: params[:query]) if params[:query].present?
+    scope = scope.where(category: params[:category]) if params[:category].present?
     scope = scope.where("location ILIKE ?", "%#{params[:place]}%") if params[:place].present?
-
     scope
   end
 
   def boards_params
     params.require(:board).permit(:name, :description, :category, :price, :location, :user_id, :photo)
   end
+
+  def set_conversations
+    if !current_user.nil?
+      @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+    end
+  end
+
 
 end
