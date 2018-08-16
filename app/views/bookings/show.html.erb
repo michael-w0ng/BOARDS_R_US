@@ -7,7 +7,7 @@
         data-markers="<%= @markers.to_json %>"
       >
     </div>
-    <div class="container banner-content">
+    <div class="container ">
       <h2 class="show-h2"><%= @booking.board.name %> is ready for pick up</h2>
       <p><%= @booking.board.description %></p>
       <p><%= @booking.start_date %></p>
@@ -19,12 +19,12 @@
 </div>
 
 <div>
-    <h3 class="h3-no-margin">Reviews:</h3>
-    <div class="form-group">
+    <h3>Reviews:</h3>
+    <div>
       <%= link_to "Add a Review", new_board_review_path(@booking.board.id), class: "btn btn-warning" %>
     </div>
     <%@booking.board.reviews.each do |review| %>
-    <div class="review-box">
+    <div>
       <p> <%= review.content %> </p>
       <% review.rating.times do %>
       <i class="fas fa-star"></i>
