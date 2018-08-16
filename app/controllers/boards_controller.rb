@@ -22,9 +22,9 @@ class BoardsController < ApplicationController
       }]
 
    if Conversation.between(current_user.id, @board.user.id).present?
-      @conversation = Conversation.between(current_user.id, @board.user.id).first
+      @conversation = Conversation.between(current_user, @board.user).first
     else
-      @conversation = Conversation.new(sender_id: current_user.id, recipient_id: @board.user.id)
+      @conversation = Conversation.new(sender_id: current_user.id, receiver_id: @board.user.id)
       @conversation.save!
     end
 
