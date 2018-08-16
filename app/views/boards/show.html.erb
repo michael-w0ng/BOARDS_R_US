@@ -59,14 +59,11 @@
           <div class="form-group">
             <input type="text" class="form-control" placeholder="to" id="to">
           </div> -->
-          <div class="form-group">
-            <%= link_to "Book this board", new_board_booking_path(@board), class: "btn btn-danger"  %>
-          </div>
-
         </form>
     </div>
 
     <h4>Booking Dates</h4>
+
       <%= simple_form_for [@board, @booking] do |f|  %>
       <%= f.label "From:" %>
       <%= f.date_field :start_date, :value => session[:time_start] %>
@@ -79,13 +76,8 @@
     <% end %>
 
 
-
-
   <div>
     <h3 class="h3-no-margin">Reviews:</h3>
-    <div class="form-group">
-      <%= link_to "Add a Review", new_board_review_path(@board), class: "btn btn-warning" %>
-    </div>
     <%@board.reviews.each do |review| %>
     <div class="review-box">
       <p> <%= review.content %> </p>

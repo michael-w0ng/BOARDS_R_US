@@ -1,0 +1,35 @@
+<div>
+  <div>
+    <div
+        id="map"
+        style="width: 100%;
+        height: 300px;"
+        data-markers="<%= @markers.to_json %>"
+      >
+    </div>
+    <div class="container banner-content">
+      <h2 class="show-h2"><%= @booking.board.name %> is ready for pick up</h2>
+      <p><%= @booking.board.description %></p>
+      <p><%= @booking.start_date %></p>
+      <p></p> <%= @booking.end_date %>
+      <p></p> <%= @duration = (@booking.end_date - @booking.start_date).to_i %>
+      <p></p> <%= @duration * @booking.board.price %>
+    </div>
+  </div>
+</div>
+
+<div>
+    <h3 class="h3-no-margin">Reviews:</h3>
+    <div class="form-group">
+      <%= link_to "Add a Review", new_board_review_path(@booking.board.id), class: "btn btn-warning" %>
+    </div>
+    <%@booking.board.reviews.each do |review| %>
+    <div class="review-box">
+      <p> <%= review.content %> </p>
+      <% review.rating.times do %>
+      <i class="fas fa-star"></i>
+      <% end %></p>
+    </div>
+    <% end %>
+
+  </div>
