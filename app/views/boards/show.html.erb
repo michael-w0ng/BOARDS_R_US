@@ -75,8 +75,10 @@
       <%= f.date_field :end_date, :value => session[:time_end] %> <br>
       <%= f.submit "Book" %>
     <!-- <%# conversations.receiver_id = @board.user%> -->
+      <% if current_user.present? %>
       <%= link_to "Message the owner", conversation_messages_path(@conversation), class: "btn btn-primary"%>
-    <% end %>
+      <% end %>
+     <% end %>
 
 
 

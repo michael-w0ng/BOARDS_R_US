@@ -1,8 +1,8 @@
 <div class="flex-box container">
   <div class="col-lg-4">
-    <h3> Do you want to book this board? </h3>
+    <h3> Do you want to change your booking? </h3>
       <h4>Booking Dates</h4>
-        <%= simple_form_for [@board, @booking] do |f|  %>
+        <%= simple_form_for @booking do |f|  %>
         <%= f.label "From:" %>
         <%= f.date_field :start_date, :value => session[:time_start] %>
         <br>
@@ -15,16 +15,16 @@
       <div class="col-lg-4 col-lg-offset-2" style="margin-top:100px;">
         <div>
           <h4>Booking Details </h4>
-          <p> Board : <%=  @board.name %></p>
-          <p> Description : <%= @board.description %></p>
+          <p> Board : <%=  @booking.board.name %></p>
+          <p> Description : <%= @booking.board.description %></p>
           <p> Dates : <%= @booking.start_date %> <%= @booking.end_date %></p>
-          <p> Price : <%= @board.price %></p>
+          <p> Price : <%= @booking.board.price %></p>
         </div>
         <h4> Payment Details </h4>
         <p> credit card stuff</p>
         <p> card holder </p>
         <p> card dates</p>
-        <p><%= link_to " Back to previous selection", board_path(@board), class: "btn btn-warning" %></p>
+        <p><%= link_to " Back to previous selection", board_path(@booking.board.id), class: "btn btn-warning" %></p>
       </div>
 </div>
 

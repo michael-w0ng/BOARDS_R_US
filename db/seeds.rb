@@ -1,7 +1,10 @@
 Booking.destroy_all
 Board.destroy_all
-User.destroy_all
 Conversation.destroy_all
+Message.destroy_all
+User.destroy_all
+
+
 
 User.create(
   [
