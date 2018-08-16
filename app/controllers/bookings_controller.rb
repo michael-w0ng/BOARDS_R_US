@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :set_conversations
 
   def index
     @user = current_user
@@ -48,6 +49,9 @@ class BookingsController < ApplicationController
   end
 
   private
+  def set_conversations
+    @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+  end
 
   def booking_params
     params.require(:booking).permit(:board_id, :user_id, :start_date, :end_date)
