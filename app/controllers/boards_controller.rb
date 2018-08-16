@@ -11,6 +11,7 @@ class BoardsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @board = Board.find(params[:id])
 
     @markers =
