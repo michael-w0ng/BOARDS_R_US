@@ -14,5 +14,4 @@ class Board < ApplicationRecord
   validates :price, presence: true
   validates :location, presence: true
   validates :category, inclusion: { in: ["Snowboard", "Skateboard", "Surfboard"] }
-
 end

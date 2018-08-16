@@ -59,9 +59,8 @@ class BoardsController < ApplicationController
       scope = Board.where.not(id: scope.pluck(:id))
     end
 
-    scope = scope.where(category: params[:query]) if params[:query].present?
+    scope = scope.where(category: params[:category]) if params[:category].present?
     scope = scope.where("location ILIKE ?", "%#{params[:place]}%") if params[:place].present?
-
     scope
   end
 
