@@ -6,6 +6,7 @@ User.destroy_all
 Review.destroy_all
 
 
+
 User.create(
   [
     {

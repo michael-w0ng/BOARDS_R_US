@@ -21,12 +21,15 @@ class BoardsController < ApplicationController
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }]
 
-   if Conversation.between(current_user.id, @board.user.id).present?
-      @conversation = Conversation.between(current_user, @board.user).first
-    else
-      @conversation = Conversation.new(sender_id: current_user.id, receiver_id: @board.user.id)
-      @conversation.save!
-    end
+   if current_user.present?
+     if Conversation.between(current_user.id, @board.user).present?
+        @conversation = Conversation.between(current_user.id, @board.user).first
+      else
+        @conversation = Conversation.new(sender_id: current_user.id, receiver_id: @board.user.id)
+        @conversation.save!
+      end
+   end
+
 
   end
 
