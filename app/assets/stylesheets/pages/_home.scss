@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 body {
-  background-color: #F4F4F4;
+ background-image: radial-gradient(circle, #a6c2cf, #86a4b2, #678796, #486c7b, #295161);
 }
 
 .banner {
@@ -121,4 +121,8 @@ body {
   }
 }
 
+.transition{
+  height:2px;
+  background-color:white;
+}
 
