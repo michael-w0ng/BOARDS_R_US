@@ -26,6 +26,7 @@ class BoardsController < ApplicationController
   def create
     @board = Board.new(boards_params)
     @board.user = current_user
+    # @board.owner_id = current_user
     if @board.save
       redirect_to board_path(@board), notice: "You have successfully listed your board!!"
     else
