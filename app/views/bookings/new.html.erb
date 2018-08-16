@@ -1,29 +1,21 @@
-<div class="flex-box container">
-  <div class="col-lg-4">
-    <h3> Do you want to book this board? </h3>
-      <h4>Booking Dates</h4>
-        <%= simple_form_for [@board, @booking] do |f|  %>
-        <%= f.label "From:" %>
-        <%= f.date_field :start_date, :value => session[:time_start] %>
-        <br>
-        <%= f.label "Until:" %>
-        <%= f.date_field :end_date, :value => session[:time_end] %> <br>
-        <%= f.submit "Book" %>
-      <% end %>
-    </div>
 
-      <div class="col-lg-4 col-lg-offset-2" style="margin-top:100px;">
-        <div>
-          <h4>Booking Details </h4>
-          <p> Board : <%=  @board.name %></p>
-          <p> Description : <%= @board.description %></p>
-          <p> Dates : <%= @booking.start_date %> <%= @booking.end_date %></p>
-          <p> Price : <%= @board.price %></p>
-        </div>
-        <h4> Payment Details </h4>
-        <p> credit card stuff</p>
-        <p> card holder </p>
-        <p> card dates</p>
-        <p><%= link_to " Back to previous selection", board_path(@board), class: "btn btn-warning" %></p>
-      </div>
+<div>
+  <div>
+    <div
+        id="map"
+        style="width: 100%;
+        height: 300px;"
+        data-markers="<%= @markers.to_json %>"
+      >
+    </div>
+    <div class="container banner-content">
+      <h2 class="show-h2"><%= @board.name %> is ready for pick up</h2>
+      <%= @booking.start_date %>
+      <%= @booking.end_date %>
+    </div>
+  </div>
 </div>
+
+
+
+

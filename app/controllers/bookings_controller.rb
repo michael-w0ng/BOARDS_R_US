@@ -28,13 +28,15 @@ class BookingsController < ApplicationController
     @all_bookings.each do |booking|
       arrival = booking.start_date
       departure = booking.end_date
-      if @start_date.between?(arrival, departure) || @end_date.between?(arrival, departure)
+      if arrival == nil
+        found = false
+      elsif @start_date.between?(arrival, departure) || @end_date.between?(arrival, departure)
         found = true
       end
     end
     # @booking = Booking.new(booking_params)
     if found == true
-      redirect_to new_board_booking_path, notice: "This board is already booked in the requested period"
+      redirect_to board_path(params[:board_id]), notice: "This board is already booked in the requested period"
     else
       @booking.save!
       redirect_to bookings_path, notice: "You have successfully booked this board!!"

@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
     @board = Board.find(params[:board_id])
     @review.board = @board
     if @review.save!
-      redirect_to board_path(@board)
+      redirect_to root_path, notice: "Thanks for the review and see you soon!"
     else
       render :new
     end
