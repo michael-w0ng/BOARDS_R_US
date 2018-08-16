@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
       redirect_to new_board_booking_path, notice: "This board is already booked in the requested period"
     else
       @booking.save!
-      redirect_to board_path(@booking.board_id)
+      redirect_to bookings_path, notice: "You have successfully booked this board!!"
     end
   end
 

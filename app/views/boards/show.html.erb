@@ -9,23 +9,30 @@
   </div>
 </div>
 
+
+
   <div class="container wrapper-height">
+
     <div class="flex-col wrapper-heading-show">
         <h1 id="name">
            <strong>
-            <%= @board.name %>
+            <%#= @board.name %>
           </strong>
         </h1>
         <div class="location">
           <i class="fas fa-map-pin" id="location">
             <%= @board.location %></i>
 
-  <div
-    id="map"
-    style="width: 100%;
-    height: 300px;"
-    data-markers="<%= @markers.to_json %>"
-  ></div>
+      <br>
+
+      <div
+        id="map"
+        style="width: 100%;
+        height: 300px;"
+        data-markers="<%= @markers.to_json %>"
+      ></div>
+
+      <br>
 
         </div>
         <div class="category">
@@ -43,21 +50,19 @@
        <form action="#" class="form-show" >
           <h4>
             <strong>
-              $<%= @board.price %> per day
+              $<%= @board.price %>0 per day
             </strong>
           </h4>
-          <div class="form-group">
+         <!--  <div class="form-group">
             <input type="text" class="form-control" placeholder="from" id="from">
           </div>
           <div class="form-group">
             <input type="text" class="form-control" placeholder="to" id="to">
-          </div>
+          </div> -->
           <div class="form-group">
             <%= link_to "Book this board", new_board_booking_path(@board), class: "btn btn-danger"  %>
           </div>
-           <div class="form-group">
-             <%= link_to "Add a Review", new_board_review_path(@board), class: "btn btn-warning" %>
-          </div>
+
         </form>
     </div>
 
@@ -66,7 +71,10 @@
 
 
   <div>
-    <h3>Reviews:</h3>
+    <h3 class="h3-no-margin">Reviews:</h3>
+    <div class="form-group">
+      <%= link_to "Add a Review", new_board_review_path(@board), class: "btn btn-warning" %>
+    </div>
     <%@board.reviews.each do |review| %>
     <div class="review-box">
       <p> <%= review.content %> </p>

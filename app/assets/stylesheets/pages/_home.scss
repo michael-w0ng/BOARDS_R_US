@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+body {
+  background-color: #F4F4F4;
+}
+
 .banner {
   background-size: cover;
 }
@@ -19,7 +23,7 @@
 }
 
 .card-content {
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .card-image {
