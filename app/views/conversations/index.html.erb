@@ -3,6 +3,7 @@
 <div class="inbox">
   <h1>Inbox</h1>
   <ul>
+    <%if !@conversations.nil?  %>
     <% @conversations.each do |conversation| %>
       <li> <i class="far fa-envelope"></i>
         <%= link_to conversation.recipient(current_user).email, conversation_messages_path(conversation) %>
@@ -10,6 +11,7 @@
           (<%= conversation.unread_message_count(current_user) %>)
         <% end %>
       </li>
+    <% end %>
     <% end %>
   </ul>
 

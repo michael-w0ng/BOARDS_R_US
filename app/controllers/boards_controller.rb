@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-
+  before_action :set_conversations
   def home
     @boards = Board.all
   end
@@ -67,5 +67,12 @@ class BoardsController < ApplicationController
   def boards_params
     params.require(:board).permit(:name, :description, :category, :price, :location, :user_id, :photo)
   end
+
+  def set_conversations
+    if !current_user.nil?
+      @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
+    end
+  end
+
 
 end
