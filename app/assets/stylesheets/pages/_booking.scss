@@ -9,39 +9,76 @@
 // }
 
 @media screen and (min-width: 721px) {
-  .booking-card {
+
+  .booking-elements {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 3px;
+    margin: 5px;
+    border-radius: 4px;
+  }
+
+  .booking_img {
     background-color: white;
-    margin-bottom: 15px;
-    border-radius: 4px;
+    border-radius: 10px;
+    width: 250px;
+    height: 175px;
+    float: left;
+    padding: 5px;
+    box-shadow: 0px 0px 0px 0.2px;
+    opacity: 0.8;
   }
-
-  .card-img {
-    border-radius: 4px;
-  }
-
-  .booking-image {
-    padding-top: 15px;
-    padding-left: 15px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-  }
-
-  .booking-content {
-    grid-column-start: 2;
-    padding-top: 10px;
-    grid-column-start: 2;
-    margin-bottom: 15px;
-    border-radius: 0px 4px 4px 0px;
-  }
-
-  .booking-button {
-    margin-top: auto;
+  .header-bookings {
+    background-color: white;
+    padding: 3px;
+    text-align: center;
+    margin: 5px;
+    float: right;
+    box-shadow: 0px 0px 0px 0.2px;
+    border-radius: 10px;
     padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 25px;
+    opacity: 0.8;
+
   }
+  .booking-content {
+
+    vertical-align: middle;
+    text-align: center;
+    background-color: white;
+    padding-right: 200px;
+    padding-left: 186px;
+    height: 175px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px 0.2px;
+    opacity: 0.8;
+  }
+  .vertical-align {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .booking-buttons {
+    background-color: white;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px 0.2px;
+    align-items: center;
+    opacity: 0.8;
+  }
+
+  .btn {
+    width: 150px;
+    text-align: center;
+    font-size: 15px;
+    opacity: none;
+  }
+
 }
 
 @media screen and (max-width: 720px) {
