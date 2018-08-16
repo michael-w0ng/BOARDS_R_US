@@ -51,12 +51,14 @@ class BoardsController < ApplicationController
     starts = params[:time_start]
     ends = params[:time_end]
 
-    if params[:query].present? && starts.present? && ends.present?
+    if starts.present? && ends.present?
       scope = scope.joins(:bookings).where("(bookings.start_date, bookings.end_date) OVERLAPS (?, ?)", starts, ends)
       scope = Board.where.not(id: scope.pluck(:id))
     end
 
     scope = scope.where(category: params[:query]) if params[:query].present?
+    scope = scope.where("location ILIKE ?", "%#{params[:place]}%") if params[:place].present?
+
     scope
   end
 
