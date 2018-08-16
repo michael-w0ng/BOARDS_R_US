@@ -20,12 +20,14 @@
           class: "form-control",
           label: "Start Date",
           placeholder: "From" %>
+          <% @time_start = params[:time_start] %>
 
-            <%= date_field_tag :time_end,
+            <%= @time_end = date_field_tag :time_end,
           params[:time_end],
           class: "form-control",
           label: "End Date",
           placeholder: "To" %>
+          <% @time_end = params[:time_end] %>
 
         <br>
         <%= submit_tag "Search Board" %>
