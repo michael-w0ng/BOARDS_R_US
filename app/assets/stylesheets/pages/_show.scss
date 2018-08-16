@@ -1,55 +1,67 @@
-.wrapper-height {
-  margin: 25px;
-  height: 40vh;
+.flex-container {
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.flex-col {
-  height: 100%;
-  width: 50%;
+
+.booking-box {
 }
 
-.heading-show {
-  height: 50%;
-}
-
-.description-show {
-  height: 50%;
-}
-
-.location {
-  margin-top: 50px;
-}
-
-.wrapper-heading-show{
+.flex-item-booking {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  margin-right: 60px;
+  position: sticky !important;
+  top: 0 !important;
+  margin-top: 30px;
 }
 
-.show-banner {
-  height: 60vh;
-  background-size: contain;
-  // background-repeat: no-repeat;
-  background-position: center;
+.map {
+  padding-top: 20px;
+}
+
+#map {
+  width: auto;
+  height: 40vh;
+  margin-left: 60px;
+  border-radius: 4px;
+  margin-top: 20px !important;
+}
+
+.show-banner-content {
+  height: 600px;
+}
+
+.booking-box {
+  padding-top: 15px;
+}
+
+.booking-details {
+  background-color: white;
+  opacity: 50%;
+  padding: 40px !important;
+  border-radius: 4px;
+  margin-left: 60px;
+}
+
+.board-details {
+  background-color: white;
+  opacity: 50%;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  margin-left: 60px;
+}
+
+.review-details {
+  background-color: white;
+  opacity: 50%;
+  padding: 20px;
+  border-radius: 4px;
+  margin-left: 60px;
 }
 
 .show-h2 {
-  color: #13315C;
-  text-shadow: -0.5px 0 lightgray, 0 0.5px lightgray, 0.5px 0 lightgray, 0 -0.5px lightgray;
-}
-
-.h3-no-margin {
-  margin-top: 0px;
-}
-
-
-.wrapper-price-show{
-  display: flex;
-  flex-direction: column;
-  // justify-content: space-around;
-  // align-items: space-evenly;
-}
-.form-show {
-  margin: 0 auto;
+  margin-left: 60px;
 }

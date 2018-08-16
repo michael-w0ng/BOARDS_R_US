@@ -1,94 +1,69 @@
-
-<div>
-  <div class="show-banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 0%), url(<%= @board.photo %>);">
-    <div class="container banner-content">
-
-      <h2 class="show-h2"><%= @board.name %></h2>
-
-    </div>
+<div class="show-banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 0%), url(<%= @board.photo %>);">
+  <div class="show-banner-content">
+    <h2 class="show-h2"><%= @board.name %></h2>
   </div>
 </div>
 
+<div class="flex-container">
+  <div class="details-container">
+    <br>
+    <div
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+    ></div>
+    <br>
 
-
-  <div class="container wrapper-height">
-
-    <div class="flex-col wrapper-heading-show">
-        <h1 id="name">
-           <strong>
-            <%#= @board.name %>
-          </strong>
-        </h1>
-        <div class="location">
-          <i class="fas fa-map-pin" id="location">
-            <%= @board.location %></i>
-
-      <br>
-
-      <div
-        id="map"
-        style="width: 100%;
-        height: 300px;"
-        data-markers="<%= @markers.to_json %>"
-      ></div>
-
-      <br>
-
-        </div>
-        <div class="category">
-          <i class="fa fa-angle-right" id="category">
-            <%= @board.category %>
-          </i>
-        </div>
+    <div class="board-details">
+      <div class="category">
+       <p>Enjoy your <%= @board.category %>!</p>
+      </div>
       <div class="description-show">
-         <p>
-            <%= @board.description %>
-          </p>
+        <p><%= @board.description %></p>
       </div>
     </div>
-    <div class="flex-col wrapper-price-show">
-       <form action="#" class="form-show" >
-          <h4>
-            <strong>
-              $<%= @board.price %>0 per day
-            </strong>
-          </h4>
-         <!--  <div class="form-group">
-            <input type="text" class="form-control" placeholder="from" id="from">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="to" id="to">
-          </div> -->
-        </form>
+
+    <div class="review-details">
+      <h3 class="h3-no-margin">Reviews:</h3>
+      <%@board.reviews.each do |review| %>
+      <div class="review-box">
+        <p> <%= review.content %> </p>
+        <% review.rating.times do %>
+        <i class="fas fa-star"></i>
+        <% end %></p>
+      </div>
+      <% end %>
     </div>
+  </div>
+<div class="booking-box">
+  <div class="flex-item-booking">
 
-    <h4>Booking Dates</h4>
 
+     <div class="booking-details">
+      <h4>Booking Details</h4>
+
+      <div>
+        <form action="#" class="form-show" >
+          <h4><strong>$<%= @board.price %>0 per day</strong></h4>
+        </form>
+      </div>
+      <br>
       <%= simple_form_for [@board, @booking] do |f|  %>
       <%= f.label "From:" %>
       <%= f.date_field :start_date, :value => session[:time_start] %>
       <br>
+      <br>
       <%= f.label "Until:" %>
-      <%= f.date_field :end_date, :value => session[:time_end] %> <br>
+      <%= f.date_field :end_date, :value => session[:time_end] %>
+      <br>
+      <br>
       <%= f.submit "Book" %>
-    <!-- <%# conversations.receiver_id = @board.user%> -->
+      <br>
+      <br>
       <%= link_to "Message the owner", conversation_messages_path(@conversation), class: "btn btn-primary"%>
-    <% end %>
-
-
-  <div>
-    <h3 class="h3-no-margin">Reviews:</h3>
-    <%@board.reviews.each do |review| %>
-    <div class="review-box">
-      <p> <%= review.content %> </p>
-      <% review.rating.times do %>
-      <i class="fas fa-star"></i>
-      <% end %></p>
+      <% end %>
     </div>
-    <% end %>
-
   </div>
-
-
 </div>
+</div>
+
 
