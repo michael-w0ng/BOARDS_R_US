@@ -3,3 +3,35 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+.item-container {
+  margin-top: 40px;
+  margin-left: 60px;
+}
+
+.description-container {
+  margin: 60px;
+}
+
+.booking-style {
+  background-color: white;
+  opacity: 50%;
+  padding: 20px !important;
+  border-radius: 4px;
+}
+
+.booking-description {
+  background-color: white;
+  opacity: 50%;
+  margin-top: 20px;
+  padding: 20px !important;
+  border-radius: 4px;
+}
+
+.review-styling {
+  background-color: white;
+  opacity: 50%;
+  margin-top: 20px;
+  padding: 20px !important;
+  border-radius: 4px;
+}
