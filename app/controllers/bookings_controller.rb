@@ -2,8 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_conversations
 
   def index
-    @user = current_user
-    @bookings = Booking.all.where(params[:user_id] == @user.id )
+    @bookings = Booking.where(user: current_user)
   end
 
   def show
@@ -29,7 +28,9 @@ class BookingsController < ApplicationController
     @all_bookings.each do |booking|
       arrival = booking.start_date
       departure = booking.end_date
-      if @start_date.between?(arrival, departure) || @end_date.between?(arrival, departure)
+      if arrival == nil
+        found = false
+      elsif @start_date.between?(arrival, departure) || @end_date.between?(arrival, departure)
         found = true
       end
     end
