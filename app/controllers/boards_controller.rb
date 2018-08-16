@@ -6,6 +6,8 @@ class BoardsController < ApplicationController
 
   def index
     @boards = apply_filters(Board.all)
+    session[:time_start] = params[:time_start]
+    session[:time_end] = params[:time_end]
   end
 
   def show
