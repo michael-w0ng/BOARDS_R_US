@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
 
     found = false
 
-    @all_bookings = Booking.all.where(params[:board_id] == @booking.board_id)
+    @all_bookings = Booking.all.where(params[:id] == @booking.board_id)
     @all_bookings.each do |booking|
       arrival = booking.start_date
       departure = booking.end_date
