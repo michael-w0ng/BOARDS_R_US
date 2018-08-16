@@ -15,6 +15,15 @@
           label: "Category",
           placeholder: "Find a board category" %>
           <br>
+
+        <%= text_field_tag :place,
+          params[:place],
+          class: "form-control",
+          label: "Location",
+          placeholder: "Find a Location" %>
+
+          <br>
+
           <p>From:</p>
            <%= date_field_tag :time_start,
           params[:time_start], :value => Time.now.strftime('%Y-%m-%d'),
