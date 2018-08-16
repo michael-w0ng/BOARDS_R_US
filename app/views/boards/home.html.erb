@@ -21,17 +21,10 @@
           class: "form-control",
           label: "Start Date",
           placeholder: "From" %>
-<<<<<<< HEAD
-          <% @time_start = params[:time_start] %>
-
-            <%= @time_end = date_field_tag :time_end,
-          params[:time_end],
-=======
           <br>
           <p>Until:</p>
             <%= date_field_tag :time_end,
           params[:time_end], :value => Time.now.strftime('%Y-%m-%d'),
->>>>>>> master
           class: "form-control",
           label: "End Date",
           placeholder: "To" %>
