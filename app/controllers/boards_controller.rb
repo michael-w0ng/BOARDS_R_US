@@ -27,7 +27,7 @@ class BoardsController < ApplicationController
     @board = Board.new(boards_params)
     @board.user = current_user
     if @board.save
-      redirect_to root_path
+      redirect_to board_path(@board), notice: "You have successfully listed your board!!"
     else
       render :new
     end
