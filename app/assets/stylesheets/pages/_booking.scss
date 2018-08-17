@@ -10,8 +10,32 @@
 
 @media screen and (min-width: 721px) {
 
+  nav ul {
+    height:500px;
+    width:100%;
+
+  }
+
+  nav ul {
+    overflow:hidden;
+    overflow-y:scroll;
+  }
+
+  .row {
+    text-align: center;
+  }
+
+
+  ::-webkit-scrollbar {
+  display: none;
+  }
+
+  .bookings{
+
+  }
+
   .booking-elements {
-    width: 100%;
+
     display: flex;
     align-items: center;
     padding: 3px;
@@ -30,6 +54,7 @@
     opacity: 0.8;
   }
   .header-bookings {
+
     background-color: white;
     padding: 3px;
     text-align: center;
@@ -44,8 +69,8 @@
   }
   .booking-content {
     background-color: white;
-    padding-right: 150px;
-    padding-left: 150px;
+    padding-right: 100px;
+    padding-left: 100px;
     height: 175px;
     border-radius: 10px;
     box-shadow: 0px 0px 0px 0.2px;
@@ -65,6 +90,12 @@
     box-shadow: 0px 0px 0px 0.2px;
     align-items: center;
     opacity: 0.8;
+  }
+
+  .boards-back-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
   }
 
   .btn {
