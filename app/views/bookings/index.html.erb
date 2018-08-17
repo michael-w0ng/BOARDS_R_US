@@ -1,37 +1,38 @@
 
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,100,120,0.6) 0%, rgba(0,36,61,0.1) 30%), url(https://images.unsplash.com/photo-1466916932233-c1b9c82e71c4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6392a7a6557d92231aff0bd14b6e7dcb&auto=format&fit=crop&w=1650&q=80);">
-      <div class="container banner-content">
-        <div class="row">
-          <div class="header-bookings">
-            <h3> Upcoming Bookings </h3>
-          </div>
-            </div>
-              <nav>
-                <ul>
-                  <% @bookings.each do |booking| %>
-                    <li>
-                      <div class="booking-elements">
-                        <div class="booking-image">
-                          <%= cl_image_tag(booking.board.photo, class: 'booking_img') %>
-                        </div>
-                          <div class="booking-content">
-                            <div class="vertical-align">
-                              <p><strong><%=  booking.board.name %></strong></p>
-                              <p> FROM: <strong><%= booking.start_date %></strong> UNTIL: <strong><%= booking.end_date %> </strong></p>
-                            </div>
-                          </div>
-                            <div class="booking-buttons">
-                              <p> <%= link_to "Booking Details!", booking_path(booking.id), class: "btn btn-primary" %></p>
-                              <p> <%= link_to "Edit booking", edit_booking_path(booking.id), class: "btn btn-primary" %></p>
-                              <p> <%= link_to "Cancel booking!", booking_path(booking.id), method: :delete, class: "btn btn-primary"%></p>
-                            </div>
-                          <% end %>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,100,120,0.6) 0%, rgba(0,36,61,0.1) 30%), url(https://images.unsplash.com/photo-1466916932233-c1b9c82e71c4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6392a7a6557d92231aff0bd14b6e7dcb&auto=format&fit=crop&w=1650&q=80);">
+  <div class="container banner-content">
+    <div class="row">
+      <div class="header-bookings">
+        <h3> Upcoming Bookings </h3>
+      </div>
+    </div>
+        <nav>
+          <ul>
+          <% @bookings.each do |booking| %>
+            <li>
+            <div class="booking-elements">
+              <div class="booking-image">
+                <%= cl_image_tag(booking.board.photo, class: 'booking_img') %>
+              </div>
+              <div class="booking-content">
+                <div class="vertical-align">
+                  <p><strong><%=  booking.board.name %></strong></p>
+                  <p> FROM: <strong><%= booking.start_date %></strong> UNTIL: <strong><%= booking.end_date %> </strong></p>
                 </div>
-
+              </div>
+              <div class="booking-buttons">
+                <p> <%= link_to "Booking Details", booking_path(booking.id), class: "btn btn-primary" %></p>
+                <p> <%= link_to "Edit booking", edit_booking_path(booking.id), class: "btn btn-danger" %></p>
+                <p> <%= link_to "Cancel booking", booking_path(booking.id), method: :delete, class: "btn btn-warning"%></p>
+              </div>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
