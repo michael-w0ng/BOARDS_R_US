@@ -1,117 +1,134 @@
 <div>
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,100,120,0.6) 0%, rgba(0,36,61,0.1) 30%), url('https://res.cloudinary.com/dfowktpgu/image/upload/v1534176779/8812177072_8022fe51f0_k.jpg');">
     <div class="container banner-content">
-    <div class="titles">
-      <h1>Boards R' Us</h1>
-    </div>
+      <div class="titles">
+        <h1>Boards R' Us</h1>
+      </div>
 
-    <div class="container search-form">
-      <div class="col-sm-6">
 
-      <%= form_tag boards_path, method: :get do %>
+      <div class="container search-form">
+        <div class="col-sm-6">
+
+          <%= form_tag boards_path, method: :get do %>
+
           <p>Pick a board category:</p>
-        <%= select_tag :category, options_for_select(["Snowboard", "Skateboard", "Surfboard"]),
-            class: "form-control" %>
+          <%= select_tag :category, options_for_select(["Snowboard", "Skateboard", "Surfboard"]),
+          class: "form-control" %>
 
           <br>
-
-        <%= text_field_tag :place,
+          <p>Find a place:</p>
+          <%= text_field_tag :place,
           params[:place],
           class: "form-control",
-          label: "Location",
-          placeholder: "Find a Location" %>
+            label: "Location",
+            placeholder: "Location" %>
 
-          <br>
-
-          <p>From:</p>
-           <%= date_field_tag :time_start,
-          params[:time_start], :value => Time.now.strftime('%Y-%m-%d'),
-          class: "form-control",
-          label: "Start Date",
-          placeholder: "From" %>
-          <br>
-          <p>Until:</p>
-            <%= date_field_tag :time_end,
-          params[:time_end], :value => Time.now.strftime('%Y-%m-%d'),
-          class: "form-control",
-          label: "End Date",
-          placeholder: "To" %>
-          <% @time_end = params[:time_end] %>
-
-        <br>
-        <%= submit_tag "Search Board", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-    </div>
-    </div>
-
-  </div>
-
-  <div class="container">
-    <h3>Available Boards:</h3>
-
-    <h4>Snow</h4>
-    <div class="scrolling-wrapper">
-
-      <% snow = @boards.select { |board| board.category == "Snowboard"} %>
-      <% snow.each do |board|%>
-      <div class="card">
-
-        <div class="card-outline">
-          <div class="card-content card-image">
-             <%= cl_image_tag(board.photo, class: 'card-img') %>
+            <br>
           </div>
-          <div class="card-content card-body">
-            <p class="card-text"><%=link_to board.name, board_path(board)%></p>
-            <p class="card-text">$<%= board.price %>0 | <%=board.location%></p>
+          <div class="col-sm-6">
+
+            <p>From:</p>
+            <%= date_field_tag :time_start,
+            params[:time_start], :value => Time.now.strftime('%Y-%m-%d'),
+            class: "form-control",
+              label: "Start Date",
+              placeholder: "From" %>
+              <br>
+              <p>Until:</p>
+              <%= date_field_tag :time_end,
+              params[:time_end], :value => Time.now.strftime('%Y-%m-%d'),
+              class: "form-control",
+                label: "End Date",
+                placeholder: "To" %>
+                <% @time_end = params[:time_end] %>
+
+                <br>
+                <div class="sf-button">
+                  <%= submit_tag "Search Board", class: "btn btn-primary" %>
+                </div>
+              </div>
+              <% end %>
+
+            </div>
           </div>
+
+        </div>
+
+        <div class="transition">
+        </div>
+
+        <div class="container">
+          <h3>Available Boards:</h3>
+
+          <div class="category">
+            <h4>Snow</h4>
+            <div class="scrolling-wrapper">
+
+
+              <% snow = @boards.select { |board| board.category == "Snowboard"} %>
+              <% snow.each do |board|%>
+              <div class="card">
+
+                <div class="card-outline">
+                  <div class="card-content card-image">
+                    <%= cl_image_tag(board.photo, class: 'card-img') %>
+                  </div>
+                  <div class="card-content card-body">
+                    <p class="card-text"><%=link_to board.name, board_path(board)%></p>
+                    <p class="card-text">$<%= board.price %>0 | <%=board.location%></p>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="category">
+            <h4>Skate</h4>
+            <div class="scrolling-wrapper">
+              <% skate = @boards.select { |board| board.category == "Skateboard"} %>
+              <% skate.each do |board|%>
+
+              <div class="card">
+
+                <div class="card-outline">
+                  <div class="card-content card-image">
+                    <%= cl_image_tag(board.photo, class: 'card-img') %>
+                  </div>
+                  <div class="card-content card-body">
+                    <p class="card-text"><%=link_to board.name, board_path(board)%></p>
+                    <p class="card-text">$<%= board.price %>0 | <%=board.location%></p>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="category">
+            <h4>Surf</h4>
+            <div class="scrolling-wrapper">
+              <% surf = @boards.select { |board| board.category == "Surfboard"} %>
+              <% surf.each do |board|%>
+
+              <div class="card">
+
+                <div class="card-outline">
+                  <div class="card-content card-image">
+                    <%= cl_image_tag(board.photo, class: 'card-img') %>
+                  </div>
+                  <div class="card-content card-body">
+                    <p class="card-text"><%=link_to board.name, board_path(board)%></p>
+                    <p class="card-text">$<%= board.price %>0 | <%=board.location%></p>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+
         </div>
       </div>
-      <% end %>
-    </div>
-
-    <h4>Skate</h4>
-    <div class="scrolling-wrapper">
-      <% skate = @boards.select { |board| board.category == "Skateboard"} %>
-      <% skate.each do |board|%>
-
-      <div class="card">
-
-        <div class="card-outline">
-          <div class="card-content card-image">
-            <%= cl_image_tag(board.photo, class: 'card-img') %>
-          </div>
-          <div class="card-content card-body">
-            <p class="card-text"><%=link_to board.name, board_path(board)%></p>
-            <p class="card-text">$<%= board.price %>0 | <%=board.location%></p>
-          </div>
-        </div>
-      </div>
-      <% end %>
-     </div>
-
-    <h4>Surf</h4>
-    <div class="scrolling-wrapper">
-      <% surf = @boards.select { |board| board.category == "Surfboard"} %>
-      <% surf.each do |board|%>
-
-      <div class="card">
-
-        <div class="card-outline">
-          <div class="card-content card-image">
-            <%= cl_image_tag(board.photo, class: 'card-img') %>
-          </div>
-          <div class="card-content card-body">
-            <p class="card-text"><%=link_to board.name, board_path(board)%></p>
-            <p class="card-text">$<%= board.price %>0 | <%=board.location%></p>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-
-  </div>
-</div>
 
 
 
@@ -123,5 +140,5 @@
           <#% surf.each do |board|%>
               <%#= board.name %>
           <#% end %>
-      </div> -->
+        </div> -->
 

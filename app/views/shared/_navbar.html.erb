@@ -13,6 +13,7 @@
       <%= link_to "Add a board", new_board_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "My Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", conversations_index_path, class: "navbar-wagon-item navbar-wagon-link"%>
+      <div class="counter">
       <% if !@conversations.nil? %>
       <% number = 0%>
         <% @conversations.each do |conversation| %>
@@ -20,7 +21,8 @@
               <% number += conversation.unread_message_count(current_user) %>
           <%  end %>
         <% end %>
-              (<%= number%>)
+            <%=number%>
+        </div>
       <% end %>
 
 

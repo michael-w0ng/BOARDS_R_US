@@ -57,10 +57,27 @@
       <br>
       <br>
       <%= f.submit "Book" %>
+
       <br>
       <br>
+
+
+    <!-- <%# conversations.receiver_id = @board.user%> -->
+      <% if current_user.present? %>
       <%= link_to "Message the owner", conversation_messages_path(@conversation), class: "btn btn-primary"%>
       <% end %>
+     <% end %>
+
+
+  <div>
+    <h3 class="h3-no-margin">Reviews:</h3>
+    <%@board.reviews.each do |review| %>
+    <div class="review-box">
+      <p> <%= review.content %> </p>
+      <% review.rating.times do %>
+      <i class="fas fa-star"></i>
+      <% end %></p>
+
     </div>
   </div>
 </div>
