@@ -56,34 +56,17 @@
           <%= f.date_field :end_date, :value => session[:time_end] %>
           <br>
           <br>
-          <%= f.submit "Book" %>
+          <%= f.submit "Book", class: "btn btn-primary"  %>
           <br>
           <br>
           <% if current_user.present? %>
-            <%= link_to "Message the owner", conversation_messages_path(@conversation), class: "btn btn-primary"%>
+            <%= link_to "Contact the owner", conversation_messages_path(@conversation), class: "btn btn-danger"%>
           <% end %>
         <% end %>
       </div>
 
       <br>
-      <%= simple_form_for [@board, @booking] do |f|  %>
-      <%= f.label "From:" %>
-      <%= f.date_field :start_date, :value => session[:time_start] %>
-      <br>
-      <br>
-      <%= f.label "Until:" %>
-      <%= f.date_field :end_date, :value => session[:time_end] %>
-      <br>
-      <br>
-      <%= f.submit "Book", class: "btn btn-primary" %>
 
-      <br>
-      <br>
-    <!-- <%# conversations.receiver_id = @board.user%> -->
-      <% if current_user.present? %>
-      <%= link_to "Contact the owner", conversation_messages_path(@conversation), class: "btn btn-danger"%>
-      <% end %>
-      <% end %>
 
 
     </div>
