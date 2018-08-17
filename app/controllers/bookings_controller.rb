@@ -7,6 +7,14 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+
+    @markers =
+      [{
+        lat: @booking.board.latitude,
+        lng: @booking.board.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }]
+
   end
 
   def new
