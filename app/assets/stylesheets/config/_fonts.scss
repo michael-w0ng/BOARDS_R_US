@@ -1,9 +1,10 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans|Nunito");
 
 // Define fonts for body and headers
-$body-font: "Aller_Lt", "Raleway", "Aller_Lt";
-$headers-font: "Raleway", "Open Sans", "sans-serif";
+$body-font: "Nunito", "Noto Sans";
+$headers-font: "Nunito";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,8 +15,3 @@ $headers-font: "Raleway", "Open Sans", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
-
-@font-face {
-  font-family: "Aller_Lt";
-  src: url(/assets/fonts/Aller_Lt.ttf) format("truetype");
-}
