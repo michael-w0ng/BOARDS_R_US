@@ -13,7 +13,6 @@
         data-markers="<%= @markers.to_json %>"
       ></div>
     </div>
-    <br>
 
     <div class="board-details">
       <div class="category">
@@ -27,47 +26,46 @@
     <div class="review-details">
       <h3 class="h3-no-margin">Reviews:</h3>
       <%@board.reviews.each do |review| %>
-      <div class="review-box">
-        <p> <%= review.content %> </p>
-        <% review.rating.times do %>
-        <i class="fas fa-star"></i>
-        <% end %></p>
-      </div>
+        <div class="review-box">
+          <p> <%= review.content %> </p>
+          <% review.rating.times do %>
+          <i class="fas fa-star"></i>
+          <% end %></p>
+        </div>
       <% end %>
     </div>
   </div>
 
-<div class="booking-box">
-  <div class="flex-item-booking">
-    <div class="booking-details">
-      <h4>Booking Details</h4>
+  <div class="booking-box">
+    <div class="flex-item-booking">
+      <div class="booking-details">
+        <h4>Booking Details</h4>
 
-      <div>
-        <form action="#" class="form-show" >
-          <h4>Per Day<strong>$<%= @board.price %>0</strong></h4>
-          <h4>For your stay<strong>$<%= @board.price * (session[:time_end].to_i - session[:time_start].to_i + 1)%>0</strong></h4>
-        </form>
+        <div>
+          <form action="#" class="form-show" >
+            <h5>Per Day:  <strong>$<%=  @board.price %>0</strong></h5>
+          </form>
+        </div>
+        <br>
+        <%= simple_form_for [@board, @booking] do |f|  %>
+          <%= f.label "From:" %>
+          <%= f.date_field :start_date, :value => session[:time_start] %>
+          <br>
+          <br>
+          <%= f.label "Until:" %>
+          <%= f.date_field :end_date, :value => session[:time_end] %>
+          <br>
+          <br>
+          <%= f.submit "Book" %>
+          <br>
+          <br>
+          <% if current_user.present? %>
+            <%= link_to "Message the owner", conversation_messages_path(@conversation), class: "btn btn-primary"%>
+          <% end %>
+        <% end %>
       </div>
-      <br>
-      <%= simple_form_for [@board, @booking] do |f|  %>
-      <%= f.label "From:" %>
-      <%= f.date_field :start_date, :value => session[:time_start] %>
-      <br>
-      <br>
-      <%= f.label "Until:" %>
-      <%= f.date_field :end_date, :value => session[:time_end] %>
-      <br>
-      <br>
-      <%= f.submit "Book" %>
-
-      <br>
-      <br>
-    <!-- <%# conversations.receiver_id = @board.user%> -->
-      <% if current_user.present? %>
-      <%= link_to "Message the owner", conversation_messages_path(@conversation), class: "btn btn-primary"%>
-      <% end %>
-      <% end %>
-
+    </div>
+  </div>
 </div>
 
 
