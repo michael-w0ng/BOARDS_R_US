@@ -16,8 +16,13 @@
     width: 700px;
     border-radius: 10px;
     }
-  }
+}
 
 .message-form{
   margin: 15px;
+}
+
+.message-container {
+  display: flex;
+  justify-content: center;
 }
