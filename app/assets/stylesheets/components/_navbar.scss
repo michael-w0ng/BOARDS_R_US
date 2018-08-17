@@ -19,7 +19,7 @@
 .navbar-wagon .avatar {
   height: 35px;
   width: 35px;
-  border-radius: 50%;
+  border-radius: 70%;
 }
 
 /* Right section */
@@ -77,9 +77,9 @@
 }
 
 .counter{
-  border-radius:50%;
+  border-radius: 70%;
   background-color:$red;
   color: white;
   width: 25px;
-  text-align: center;
+  text-align: -webkit-center;
 }

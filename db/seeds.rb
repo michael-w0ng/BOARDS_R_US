@@ -95,7 +95,7 @@ end
     name: "Surfmaster 5000",
     category: "Surfboard",
     location: "Sydney",
-    description: "great surfboard",
+    description: "",
     price: 300.00,
     user: User.all.sample
   )
