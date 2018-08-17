@@ -8,6 +8,14 @@
           </div>
           <p> <%= link_to "Back to boards", root_path, class: "btn btn-primary", id: "btn-sticky" %></p>
 
+          <div class="booking-content">
+            <p> You are going extremeeeee from <strong><%= booking.start_date %></strong> until <strong><%= booking.end_date %> </strong></p>
+            <p> Your board of choice : <strong><%=  booking.board.name %></strong></p>
+            <p> <em><%= booking.board.description %></em></p>
+          </div>
+          <div class="booking-button">
+            <p> <%= link_to "Check out your booking details!", booking_path(booking.id), class: "btn btn-primary" %></p>
+
           <div class="bookings">
             <% @bookings.each do |booking| %>
               <div class="booking-elements">
@@ -42,12 +50,16 @@
 
               </div>
             <% end %>
+
           </div>
 
 
         </div>
 
+
       </div>
     </div>
 
 
+
+</div>
