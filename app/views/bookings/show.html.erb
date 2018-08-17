@@ -9,12 +9,12 @@
       >
     </div>
     <div class="container ">
-      <h2 class="show-h2"><%= @booking.board.name %> is ready for pick up</h2>
+      <h1 class="show-h2"><%= @booking.board.name %> </h1>
       <p><%= @booking.board.description %></p>
-      <p><%= @booking.start_date %></p>
-      <p></p> <%= @booking.end_date %>
-      <p></p> <%= @duration = (@booking.end_date - @booking.start_date).to_i %>
-      <p></p> <%= @duration * @booking.board.price %>
+      <p>Start of Rental : <%= @booking.start_date %></p>
+      <p>End of Rental : <%= @booking.end_date %> </p>
+      <p>Length of Rental : <%= @duration = (@booking.end_date - @booking.start_date + 1).to_i %> </p>
+      <p> <%= @duration * @booking.board.price %>0 $ </p>
     </div>
   </div>
 
