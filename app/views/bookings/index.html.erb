@@ -9,7 +9,7 @@
           <p> <%= link_to "Back to boards", root_path, class: "btn btn-primary", id: "btn-sticky" %></p>
 
           <div class="booking-content">
-            <p> You are going extremeeeee from <strong><%= booking.start_date %></strong> until <strong><%= booking.end_date %> </strong></p>
+            <p> You are going extremeeeee from <strong><%= @booking.board.start_date %></strong> until <strong><%= booking.end_date %> </strong></p>
             <p> Your board of choice : <strong><%=  booking.board.name %></strong></p>
             <p> <em><%= booking.board.description %></em></p>
           </div>
