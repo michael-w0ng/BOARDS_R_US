@@ -27,10 +27,10 @@
       <h3 class="h3-no-margin">Reviews:</h3>
       <%@board.reviews.each do |review| %>
       <hr>
-        <p> <%= review.content %> </p>
         <% review.rating.times do %>
-        <i class="fas fa-star"></i>
+        <i class="fas fa-star" style="color:#EAE01C;"></i>
         <% end %></p>
+        <p> <%= review.content %> </p>
         <div class="review-box">
         </div>
       <% end %>
