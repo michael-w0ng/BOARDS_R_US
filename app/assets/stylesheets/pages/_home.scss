@@ -1,14 +1,13 @@
 // Specific CSS for your home-page
 body {
- background-image: radial-gradient(circle, #a6c2cf, #86a4b2, #678796, #486c7b, #295161);
+  background-color:whitesmoke;
 }
+
 h1 {
   margin-top:100px;
   font-size: 70px;
 }
-.white-color {
-  color:white;
-}
+
 .titles {
   color: white;
 }
@@ -35,18 +34,37 @@ h1 {
 .card-content {
     // border: 1px solid black;
 }
+.snow {
+  background-image: url('https://images.unsplash.com/photo-1517156485734-7f529a1fb65d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6689c63172e61e5d6c526f675e1169d8&auto=format&fit=crop&w=2098&q=80');
+  background-size: cover;
+
+ height: 350px;
+}
+.surf {
+  background-image: url('https://images.unsplash.com/photo-1519789110007-0e751882be76?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ffcb4d8d9dff9ef47b3330b7fa63b162&auto=format&fit=crop&w=1458&q=80');
+  background-size: cover;
+ height:350px;
+
+}
+.skate {
+  background-image: url('https://images.unsplash.com/photo-1523784972880-1a54a7832df7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=997d9ef9f1c93803460e2348f569a28c&auto=format&fit=crop&w=1650&q=80');
+  background-size: cover;
+ height:350px;
+}
 
 .card-image {
   width: 100%;
   height: 66%;
   // border-radius: 5px;
-  background-color:#EAEAEA
+  background-color:#EAEAEA;
+  margin-top:50px;
 }
 
 .card-img {
   object-fit: cover;
   height: 165px;
   width: 270px;
+
 }
 
 .card-body {
@@ -57,6 +75,8 @@ h1 {
 }
 
 
+
+
 .scrolling-wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -65,6 +85,7 @@ h1 {
   .card {
     display: inline-block;
     padding-bottom:15px;
+
   }
 }
 

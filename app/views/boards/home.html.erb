@@ -24,6 +24,7 @@
             placeholder: "Location" %>
 
             <br>
+
           </div>
           <div class="col-sm-6">
 
@@ -43,6 +44,7 @@
                 <% @time_end = params[:time_end] %>
 
                 <br>
+
                 <div class="sf-button">
                   <%= submit_tag "Search Board", class: "btn btn-primary" %>
                 </div>
@@ -62,7 +64,7 @@
 
           <div class="category">
             <h4 class="white-color">Snow</h4>
-            <div class="scrolling-wrapper">
+            <div class="scrolling-wrapper snow">
 
 
               <% snow = @boards.select { |board| board.category == "Snowboard"} %>
@@ -86,7 +88,7 @@
 
           <div class="category">
             <h4 class="white-color">Skate</h4>
-            <div class="scrolling-wrapper">
+            <div class="scrolling-wrapper skate">
               <% skate = @boards.select { |board| board.category == "Skateboard"} %>
               <% skate.each do |board|%>
 
@@ -109,7 +111,7 @@
 
           <div class="category">
             <h4 class="white-color">Surf</h4>
-            <div class="scrolling-wrapper">
+            <div class="scrolling-wrapper surf">
               <% surf = @boards.select { |board| board.category == "Surfboard"} %>
               <% surf.each do |board|%>
 
