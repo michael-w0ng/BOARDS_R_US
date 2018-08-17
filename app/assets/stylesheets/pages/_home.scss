@@ -2,7 +2,16 @@
 body {
  background-image: radial-gradient(circle, #a6c2cf, #86a4b2, #678796, #486c7b, #295161);
 }
-
+h1 {
+  margin-top:100px;
+  font-size: 70px;
+}
+.white-color {
+  color:white;
+}
+.titles {
+  color: white;
+}
 .banner {
   background-size: cover;
 }
@@ -76,7 +85,10 @@ body {
 .category {
   margin-bottom: 20px;
 }
-
+.search-form {
+  margin-top: 200px;
+  border-radius: 5px;
+}
 
 @media screen and (min-width: 721px) {
   h1 {
@@ -115,6 +127,7 @@ body {
   }
   .titles {
   padding-left: 20px;
+  color: white;
   }
   .search-form {
   padding-left: 0px;
@@ -125,4 +138,6 @@ body {
   height:2px;
   background-color:white;
 }
+
+
 
