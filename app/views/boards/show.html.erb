@@ -43,7 +43,8 @@
 
       <div>
         <form action="#" class="form-show" >
-          <h4><strong>$<%= @board.price %>0 per day</strong></h4>
+          <h4>Per Day<strong>$<%= @board.price %>0</strong></h4>
+          <h4>For your stay<strong>$<%= @board.price * (session[:time_end].to_i - session[:time_start].to_i + 1)%>0</strong></h4>
         </form>
       </div>
       <br>
@@ -77,6 +78,7 @@
       <% review.rating.times do %>
       <i class="fas fa-star"></i>
       <% end %></p>
+      <% end %>
 
     </div>
   </div>

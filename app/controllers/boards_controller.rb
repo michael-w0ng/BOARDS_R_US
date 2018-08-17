@@ -29,8 +29,6 @@ class BoardsController < ApplicationController
         @conversation.save!
       end
    end
-
-
   end
 
   def new
@@ -46,18 +44,6 @@ class BoardsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def update
-
-  end
-
-  def edit
-
-  end
-
-  def destroy
-
   end
 
   private
