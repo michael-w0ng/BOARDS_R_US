@@ -1,5 +1,4 @@
 <div class="container">
-  <h1>INDEX</h1>
 
   <h2>Boards matching your search request:</h2>
 
@@ -12,8 +11,9 @@
             <%= cl_image_tag(board.photo, height: 165, width: 270, crop: :fill) %>
           </div>
           <div class = "card-content card-body">
-            <p><%=link_to board.name, board_path(board)%></p>
-            <p>$<%=board.price%>0 | <%=board.location%></p>
+            <p class="card-text"><%=link_to board.name, board_path(board)%></p>
+            <p class="card-text">$<%= board.price %>0</p>
+            <p class="card-text"><%=board.location%></p>
           </div>
         </div>
       </div>
