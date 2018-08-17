@@ -6,6 +6,7 @@
           <div class="header-bookings col-lg-9">
           <h3> Upcoming Bookings </h3>
           </div>
+          <p> <%= link_to "Back to boards", root_path, class: "btn btn-primary", id: "btn-sticky" %></p>
 
           <div class="bookings">
             <% @bookings.each do |booking| %>
@@ -43,7 +44,6 @@
             <% end %>
           </div>
 
-          <p> <%= link_to "Back to boards", root_path, class: "btn btn-primary" %></p>
 
         </div>
 
