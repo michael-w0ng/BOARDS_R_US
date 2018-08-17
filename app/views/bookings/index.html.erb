@@ -33,9 +33,9 @@
 
 
                 <div class="booking-buttons">
-                  <p> <%= link_to "Booking Details!", booking_path(booking.id), class: "btn btn-primary" %></p>
-                  <p> <%= link_to "Edit booking", edit_booking_path(booking.id), class: "btn btn-primary" %></p>
-                  <p> <%= link_to "Cancel booking!", booking_path(booking.id), method: :delete, class: "btn btn-primary"%></p>
+                  <p> <%= link_to "Booking Details", booking_path(booking.id), class: "btn btn-primary" %></p>
+                  <p> <%= link_to "Edit booking", edit_booking_path(booking.id), class: "btn btn-danger" %></p>
+                  <p> <%= link_to "Cancel booking", booking_path(booking.id), method: :delete, class: "btn btn-warning"%></p>
                 </div>
 
 
