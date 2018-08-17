@@ -8,15 +8,7 @@
         data-markers="<%= @markers.to_json %>"
       >
     </div>
-    <div class="container ">
-      <h2 class="show-h2"><%= @booking.board.name %> is ready for pick up</h2>
-      <p><%= @booking.board.description %></p>
-      <p><%= @booking.start_date %></p>
-      <p></p> <%= @booking.end_date %>
-      <p></p> <%= @duration = (@booking.end_date - @booking.start_date).to_i %>
-      <p></p> <%= @duration * @booking.board.price %>
-    </div>
-  </div>
+
 
   <div class="flex-container">
     <div class="item-container">
